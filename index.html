@@ -8,15 +8,15 @@
   <div class="container">
     <h1 class="title">Unit Converter</h1>
     <ul class="unit-list">
-      <li class="unit-list-item selected-unit">Lenght</li>
-      <li class="unit-list-item">Temperature</li>
-      <li class="unit-list-item">Weight</li>
+      <li class="unit-list-item selected-unit" id="lenght" onclick="changeUnitType(this.id); calculateUnit();">Lenght</li>
+      <li class="unit-list-item" id="temperature" onclick="changeUnitType(this.id); calculateUnit()">Temperature</li>
+      <li class="unit-list-item" id="weight" onclick="changeUnitType(this.id); calculateUnit()">Weight</li>
     </ul>
     <div class="unit-body">
       <p>From:</p>
-      <input type="text" class="unit-input">
-      <select name="units" id="unit1" class="unit-selector">
-        <option value="milimeter">milimeter</option>
+      <input type="text" class="unit-input" id="input-element-from" oninput="calculateUnit(this)">
+      <select name="units" id="unit-from" class="unit-selector" onchange="calculateUnit()">
+        <option value="millimeter">millimeter</option>
         <option value="centimeter">centimeter</option>
         <option value="meter">meter</option>
         <option value="kilometer">kilometer</option>
@@ -26,9 +26,9 @@
         <option value="mile">mile</option>
       </select>
       <p>To:</p>
-      <input type="text" class="unit-input">
-      <select name="units" id="unit2" class="unit-selector">
-        <option value="milimeter">milimeter</option>
+      <input type="text" class="unit-input" id="input-element-to" oninput="calculateUnit(this)">
+      <select name="units" id="unit-to" class="unit-selector" onchange="calculateUnit()">
+        <option value="millimeter">millimeter</option>
         <option value="centimeter">centimeter</option>
         <option value="meter">meter</option>
         <option value="kilometer">kilometer</option>
@@ -39,5 +39,6 @@
       </select>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
